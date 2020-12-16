@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Species Description</title>
+</head>
+<body>
+    <h1>Species Description</h1>
+    {% for row in l %}
+    <b>{{row[0][0]}} (species code: {{row[1]}}):</b> 
+    <p>{{row[0][1]}}</p> 
+    {% endfor %}
+    <p>
+        Return <a href='/'>home</a>.
+    </p>    
+</body>
+</html>
