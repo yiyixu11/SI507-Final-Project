@@ -1,0 +1,38 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Birds Search: Results for {{state}}</title>
+</head>
+<body>
+    <h1>Here are your results!</h1>
+    <table>
+        <tr>
+            <th>Species Name</th>
+            <th>Species Code</th>
+            <th>Observation Location</th>
+            <th>Observation Date</th>
+            <th>How Many</th>
+        </tr>
+        {% for row in results %}
+        <tr>
+            <td>{{row[0]}}</td>
+            <td>{{row[1]}}</td>
+            <td>{{row[2]}}</td>
+            <td>{{row[3]}}</td>
+            <td>{{row[4]}}</td>
+        </tr>
+        {% endfor %}
+    </table>
+    <p>
+        Return <a href='/'>home</a>, or type species code(s) below to see more information.
+    </p>
+    <form action="/results/info" method="POST">
+        <p>
+            Species Code: <input name="code", type="text"/><br/><br/><br/>
+        </p>
+    
+        <input type="submit" value="Get Info"/>
+      </form>
+</body>
+</html>
